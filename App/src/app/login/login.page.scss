@@ -1,0 +1,40 @@
+.fn-img {
+  --background: url("../../assets/background-login.png") no-repeat center center / cover;
+}
+
+.input {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-login {
+  --border-radius: 100px;
+}
+
+.centro {
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0);
+  height: 130px;
+  width: 100%;
+  display: flex;
+}
+.conteudo {
+  height: 120px;
+  width: 120px;
+  margin: auto;
+}
+
+img {
+  width: 80px;
+  height: 100px;
+}
+
+#container {
+  text-align: center;
+  position: relative;
+  top: 20%;
+}

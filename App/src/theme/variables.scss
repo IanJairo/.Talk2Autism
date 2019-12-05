@@ -60,11 +60,11 @@
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
-  --ion-color-medium: #989aa2;
-  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium: linear-gradient(to right, #006b67, #51aba7);
+  --ion-color-medium-rgb: 0, 107, 103;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
-  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-shade: rgb(12, 85, 82);
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
