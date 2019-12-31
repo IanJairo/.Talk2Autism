@@ -9,6 +9,7 @@ import { LoginService } from '../services/login/login.service';
 export class LoginPage implements OnInit {
   email: string;
   senha: string;
+  tipo: boolean;
   constructor(
     public efLogin: LoginService
   ) { }
@@ -16,6 +17,11 @@ export class LoginPage implements OnInit {
   // Tenta fazer login
   async login() {
     this.efLogin.login(this.email, this.senha);
+
+  }
+
+  hideShow() {
+    this.tipo = !this.tipo;
 
   }
 

@@ -1,9 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+      <ion-buttons slot="end">
+          <ion-button (click)="sair()">
+              <ion-icon slot="icon-only" name="log-out"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+      <ion-title>
+          Requisições
+      </ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content></ion-content>

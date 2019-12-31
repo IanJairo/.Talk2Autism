@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-tab6',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab6Page implements OnInit {
 
-  constructor() { }
+  constructor(
+    public login: LoginService) {
+
+  }
+
+  // Sai do usuário logado
+  sair() {
+    this.login.sair('Realmente deseja sair?');
+  }
 
   ngOnInit() {
   }
