@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, AlertController } from '@ionic/angular';
 import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { AvisosService } from '../avisos/avisos.service';
@@ -22,6 +22,7 @@ export class LoginService {
     public db: AngularFirestore,
     public fAuth: AngularFireAuth,
     public loadingController: LoadingController,
+    public alertController: AlertController,
     public router: Router,
     public avisos: AvisosService) {
 
@@ -77,6 +78,39 @@ export class LoginService {
 
     }
   }
+
+  async opSair() {
+    console.log('Saiu!');
+    await this.fAuth.auth.signOut();
+    this.router.navigate(['/']);
+
+
+  }
+
+  // Função que chama um alert
+  async sairConta() {
+    const alert = await this.alertController.create({
+      header: 'Atenção',
+      message: 'Realmente quer sair?',
+      buttons: [
+        {
+          text: 'Fechar',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'Sair',
+          handler: async () => {
+            this.sair();
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+
+
+
 
   async presentLoading() {
     this.loading = await this.loadingController.create({ message: 'Aguarde...' });
