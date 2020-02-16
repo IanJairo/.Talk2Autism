@@ -24,7 +24,8 @@ export class LoginService {
     public loadingController: LoadingController,
     public alertController: AlertController,
     public router: Router,
-    public avisos: AvisosService) {
+    public avisos: AvisosService,
+    public alertController: AlertController) {
 
   }
 
@@ -116,4 +117,31 @@ export class LoginService {
     this.loading = await this.loadingController.create({ message: 'Aguarde...' });
     return this.loading.present();
   }
+
+  //Função que Sai do Usuário logado
+  async sair(mensagem) {
+    const alert = await this.alertController.create({
+      header: 'Atenção',
+      message: mensagem,
+      buttons: [
+        {
+          text: 'Fechar',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'Sair',
+          handler: async () => {
+            console.log('Saiu!');
+            await this.fAuth.auth.signOut();
+            this.router.navigate(['/']);
+
+
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+
 }
