@@ -1,17 +1,60 @@
 <ion-header>
-  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
-    <ion-buttons slot="end">
-        <ion-button >
-            <ion-icon slot="icon-only" name="log-out"></ion-icon>
-        </ion-button>
-    </ion-buttons>
-    <ion-title>
-        Noticias
-    </ion-title>
-</ion-toolbar>
+    <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>
+            Noticias
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-  
+    <div *ngFor="let noticia of noticias | async">
+
+        <ion-card *ngIf="typo=='adm'" (click)="presentAlert(noticia)">
+            <ion-card-header>
+                <ion-card-subtitle>{{noticia.titulo}}</ion-card-subtitle>
+
+            </ion-card-header>
+
+
+            <ion-card-content>
+                <!--  -->
+                <p>{{noticia.descricao}}</p>
+
+                <div *ngIf="noticia.postar == true">
+                    <ion-note color="success"> Visível</ion-note>
+                </div>
+
+                <div *ngIf="noticia.postar == false">
+                    <ion-note slot="end" color="danger"> Rascunho</ion-note>
+                </div>
+            </ion-card-content>
+
+        </ion-card>
+
+        <div *ngIf="tipoUsuario == 'pai'">
+            <ion-card class="aviso" *ngIf="noticia.postar == true">
+                <ion-card-header>
+                    <ion-card-subtitle>{{noticia.titulo}}</ion-card-subtitle>
+
+                </ion-card-header>
+
+
+                <ion-card-content>
+                    <p>{{noticia.descricao}}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+    <ion-fab *ngIf="tipoUsuario == 'adm'" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="novaNoticia()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
 </ion-content>

@@ -14,7 +14,8 @@ export class Tab7Page implements OnInit {
 
   // Sai do usuário logado
   sair() {
-    this.login.sair('Realmente deseja sair?');
+    this.login.sair();
+
   }
 
   ngOnInit() {

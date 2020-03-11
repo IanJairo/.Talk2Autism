@@ -14,7 +14,7 @@ export class Tab3Page {
 
   // Sai do usuário logado
   sair() {
-    this.login.sair('Realmente deseja sair?');
+    this.login.sair();
   }
 
 }

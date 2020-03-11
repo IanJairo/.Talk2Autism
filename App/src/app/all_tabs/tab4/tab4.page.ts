@@ -15,7 +15,8 @@ export class Tab4Page implements OnInit {
 
   // Sai do usuário logado
   sair() {
-    this.login.sair('Realmente deseja sair?');
+    this.login.sair();
+
   }
 
 
