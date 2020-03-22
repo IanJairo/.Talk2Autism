@@ -49,6 +49,14 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'editar-noticia',
+    loadChildren: () => import('./editar-noticia/editar-noticia.module').then( m => m.EditarNoticiaPageModule)
+  },
+  {
+    path: 'nova-noticia',
+    loadChildren: () => import('./nova-noticia/nova-noticia.module').then( m => m.NovaNoticiaPageModule)
   }
 ];
 @NgModule({

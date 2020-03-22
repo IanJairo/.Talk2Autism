@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title>Editar Noticia</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Editar as informações</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input [(ngModel)]="tituloNoticia">
+
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-textarea [(ngModel)]="descriNoticia" rows="6" cols="30">
+
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab (click)="excluirNoticia()" vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-button color="medium" expand="block" (click)="subNoticia(true)">
+    Publicar
+  </ion-button>
+  <ion-button color="medium" expand="block" (click)="subNoticia(false)">
+    Salvar como rascunho
+  </ion-button>
+
+
+
+</ion-content>

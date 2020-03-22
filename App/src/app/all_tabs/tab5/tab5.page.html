@@ -1,13 +1,14 @@
 <ion-header>
   <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
-    <ion-buttons slot="end">
-      <ion-butto>
+    <ion-buttons (click)="sair()" slot="end">
+      <ion-button>
         <ion-icon slot="icon-only" name="log-out"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>Mensagens</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
 
 </ion-content>
