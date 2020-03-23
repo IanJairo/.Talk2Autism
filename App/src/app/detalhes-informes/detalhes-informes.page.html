@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Descrição</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Horário de Atendimento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Data: {{ this.info.dateAtend.toDate() | date: 'dd/MM/yyyy' }}</p>
+      <p>Hora de chegada: {{this.info.pInput.toDate() | date: 'HH:mm'}}</p>
+      <p>Hora de saída: {{this.info.pOutput.toDate() | date: 'HH:mm'}}</p>
+    </ion-card-content>
+
+    <ion-card-header>
+      <ion-card-title>Mais detalhes:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Idas ao banheiro: {{ this.info.nTime }}</p>
+      <p *ngIf="info.comeu == false">Alimentação: Não comeu</p>
+      <p *ngIf="info.comeu == true">Alimentação: Comeu</p>
+      <p>Nota de Comportamento: {{ this.info.conduct }}</p>
+    </ion-card-content>
+
+    <ion-card-header>
+
+      <ion-card-title>Comentários da terapia: </ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngFor="let comentario of comentarios | async">
+      {{comentario.nome}}: {{ comentario.mensagem }}
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
