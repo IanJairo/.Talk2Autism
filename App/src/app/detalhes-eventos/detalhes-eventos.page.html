@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title  class=ion-text-left>Detalhes do Evento</ion-title>
+    
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-subtitle>Descrição:</ion-card-subtitle>
+      <ion-card-title>{{info.nomeEvento}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-header>
+      <ion-card-subtitle>Realização:</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Data: {{ info.dataEvento.toDate() | date: 'dd/MM/yyyy' }} <br>
+      Hora: {{ info.horaInicio.toDate() | date: 'HH:mm' }} às {{ info.horaTermino.toDate() | date: 'HH:mm' }}
+    </ion-card-content>
+
+
+    <ion-card-header>
+      <ion-card-subtitle>Mais detalhes:</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{info.detalheEvento}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -73,6 +73,14 @@ const routes: Routes = [
   {
     path: 'env-mensagem',
     loadChildren: () => import('./env-mensagem/env-mensagem.module').then( m => m.EnvMensagemPageModule)
+  },
+  {
+    path: 'detalhes-eventos',
+    loadChildren: () => import('./detalhes-eventos/detalhes-eventos.module').then( m => m.DetalhesEventosPageModule)
+  },
+  {
+    path: 'novos-eventos',
+    loadChildren: () => import('./novos-eventos/novos-eventos.module').then( m => m.NovosEventosPageModule)
   }
 ];
 @NgModule({

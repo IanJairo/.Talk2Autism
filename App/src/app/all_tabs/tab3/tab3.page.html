@@ -13,21 +13,7 @@
 
 
 <ion-content>
-  <div *ngIf="sFar == false && sMod == false && sReu == false">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Os pedidos estão desativados pelo momento!</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Para mais inormações ou duvidas, envie uma mensagem à coordenação.</p>
-        <ion-button (click)="envMensagem()" expand="block" fill="clear" shape="round">
-          Enviar mensagem
-        </ion-button>
-      </ion-card-content>
 
-    </ion-card>
-
-  </div>
 
 
   <!--Mostra card para cada categoria-->
@@ -54,6 +40,22 @@
   </div>
 
   <div *ngIf="tipoUsuario == 'pai'">
+    <div *ngIf="sFar == false && sMod == false && sReu == false">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Os pedidos estão desativados pelo momento!</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Para mais inormações ou duvidas, envie uma mensagem à coordenação.</p>
+          <ion-button (click)="envMensagem()" expand="block" fill="clear" shape="round">
+            Enviar mensagem
+          </ion-button>
+        </ion-card-content>
+
+      </ion-card>
+
+    </div>
+
     <div *ngFor="let req of req | async">
       <ion-card *ngIf="req.status == true" (click)="presentModal(req)">
         <img class="img" src="{{req.img}}" />

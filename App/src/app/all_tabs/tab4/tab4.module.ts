@@ -7,14 +7,24 @@ import { IonicModule } from '@ionic/angular';
 import { Tab4PageRoutingModule } from './tab4-routing.module';
 
 import { Tab4Page } from './tab4.page';
+import { NovosEventosPage } from 'src/app/novos-eventos/novos-eventos.page';
+import { DetalhesEventosPage } from 'src/app/detalhes-eventos/detalhes-eventos.page';
 
 @NgModule({
+  entryComponents: [
+    NovosEventosPage,
+    DetalhesEventosPage
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     Tab4PageRoutingModule
   ],
-  declarations: [Tab4Page]
+  declarations: [
+    Tab4Page,
+    NovosEventosPage,
+    DetalhesEventosPage
+  ]
 })
-export class Tab4PageModule {}
+export class Tab4PageModule { }
