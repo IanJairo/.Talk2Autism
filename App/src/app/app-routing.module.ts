@@ -61,6 +61,18 @@ const routes: Routes = [
   {
     path: 'detalhes-informes',
     loadChildren: () => import('./detalhes-informes/detalhes-informes.module').then( m => m.DetalhesInformesPageModule)
+  },
+  {
+    path: 'req-formulario',
+    loadChildren: () => import('./req-formulario/req-formulario.module').then( m => m.ReqFormularioPageModule)
+  },
+  {
+    path: 'req-pedidos',
+    loadChildren: () => import('./req-pedidos/req-pedidos.module').then( m => m.ReqPedidosPageModule)
+  },
+  {
+    path: 'env-mensagem',
+    loadChildren: () => import('./env-mensagem/env-mensagem.module').then( m => m.EnvMensagemPageModule)
   }
 ];
 @NgModule({
