@@ -6,15 +6,17 @@ import { IonicModule } from '@ionic/angular';
 
 import { EnvMensagemPageRoutingModule } from './env-mensagem-routing.module';
 
-import { EnvMensagemPage } from './env-mensagem.page';
+import { IonicSelectableModule } from 'ionic-selectable';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EnvMensagemPageRoutingModule
+    EnvMensagemPageRoutingModule,
+    IonicSelectableModule, //Caixa de seleção pesquisável
   ],
-  declarations: [EnvMensagemPage]
+  declarations: []
 })
 export class EnvMensagemPageModule {}

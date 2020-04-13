@@ -23,10 +23,7 @@ export class NovaNoticiaPage implements OnInit {
   ) { }
 
 
-  // Sair da página
-  async dismiss() {
-    await this.modalCtrl.dismiss();
-  }
+  
 
 
   mudaData(event) {
@@ -79,6 +76,11 @@ export class NovaNoticiaPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  // Sair da página
+  async dismiss() {
+    await this.modalCtrl.dismiss();
   }
 
 }

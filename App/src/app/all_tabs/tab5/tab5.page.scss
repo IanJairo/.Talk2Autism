@@ -3,3 +3,16 @@
     padding: 0;
     margin: 0;
 }
+
+
+ion-segment-button{
+    height: 44px;
+    --border-radius: 0px;
+}
+
+.segment-button-checked{
+    background: #FFF;
+    background-color: #FFF;
+    color: var(--ion-color-secondary);
+    border-bottom: 3px solid var(--ion-color-secondary);
+}

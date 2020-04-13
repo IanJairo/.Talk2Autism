@@ -15,11 +15,14 @@ import { AngularFireAuthModule } from '@angular/fire/auth'; //Autenticação
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
+import { IonicSelectableModule } from 'ionic-selectable';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    IonicSelectableModule, //Caixa de seleção pesquisável
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

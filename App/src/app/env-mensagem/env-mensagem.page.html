@@ -1,9 +1,58 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>EnvMensagem</ion-title>
+  <ion-toolbar [color]="colorStatus?'toolbar-color':'medium'">
+    <ion-buttons (click)="cancelar()" slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nova Mensagem</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form color="secondary" (ngSubmit)="logForm()">
+
+    
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button type="submit" color="secondary">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </form>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Tipo de Destinatário</ion-label>
+      <ion-select placeholder="Selecione" multiple>
+        <ion-select-option > Pais </ion-select-option>
+        <ion-select-option> Terapeutas </ion-select-option>
+        <ion-select-option> Coordenadores </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Usuários</ion-label>
+      <ionic-selectable
+      item-content
+      [(ngModel)]="port"
+      itemValueField="id"
+      itemTextField="name"
+      [items]="ports"
+      [canSearch]="true"
+      (onSearch)="searchPorts($event)">
+    </ionic-selectable>
+    </ion-item>
+
+    <!-- Inputs with labels -->
+    <ion-item>
+      <ion-input [(ngModel)]="mAssunto" placeholder="Assunto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="mConteudo" rows="10" cols="30" placeholder="Mensagem"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+
 
 </ion-content>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Observable } from 'rxjs';
+import { ModalController } from '@ionic/angular';
+import { EnvMensagemPage } from 'src/app/env-mensagem/env-mensagem.page';
 
 @Component({
   selector: 'app-tab5',
@@ -37,18 +39,25 @@ export class Tab5Page implements OnInit {
   }]
 
   constructor(
+    private modalController: ModalController,
     public login: LoginService) {
 
   }
 
+  //Mudar as mensagens apresentadas
   segmentChanged(event) {
     //console.log(event.detail.value); -> Conseguir o valor selecionado
     this.mensagensApresentadas = event.detail.value;
-
   }
 
-  novaMensagem(){
-    console.log("nova mensagem")
+  async novaMensagem() {
+    const modal = await this.modalController.create({
+      component: EnvMensagemPage,
+      componentProps: {
+
+      }
+    });
+    return await modal.present();
   }
 
   // Sai do usuário logado
