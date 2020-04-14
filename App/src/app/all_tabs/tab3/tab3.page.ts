@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { AvisosService } from 'src/app/services/avisos/avisos.service';
 import { ReqFormularioPage } from 'src/app/req-formulario/req-formulario.page';
 import { ReqPedidosPage } from 'src/app/req-pedidos/req-pedidos.page';
+import { EnvMensagemPage } from 'src/app/env-mensagem/env-mensagem.page';
 
 @Component({
   selector: 'app-tab3',
@@ -26,6 +27,7 @@ export class Tab3Page {
   sReu: boolean;
 
   constructor(
+    private modalController: ModalController,
     public db: AngularFirestore,
     public navCtrl: NavController,
     public login: LoginService,

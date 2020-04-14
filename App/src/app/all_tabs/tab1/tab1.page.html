@@ -13,6 +13,12 @@
 
 
 <ion-content>
+    <ion-fab *ngIf="tipoUsuario == 'adm'" vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="secondary" (click)="novaNoticia('NovaNoticiaPage', 'novaNoticia')">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
     <div *ngFor="let noticia of noticias | async">
         <div *ngIf="tipoUsuario == 'adm'">
             <ion-card (click)="maisOpcoes(noticia)">
@@ -38,12 +44,6 @@
 
             </ion-card>
 
-
-            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-                <ion-fab-button color="medium" (click)="novaNoticia('NovaNoticiaPage', 'novaNoticia')">
-                    <ion-icon name="add"></ion-icon>
-                </ion-fab-button>
-            </ion-fab>
         </div>
 
         <div *ngIf="tipoUsuario == 'pai'">
